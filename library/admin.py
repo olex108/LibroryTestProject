@@ -19,5 +19,5 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
     list_display = ("name",)
-    list_filter = ("author",)
+    list_filter = ("author", "category")
     search_fields = ("name", )

@@ -21,7 +21,7 @@ class Authors(models.Model):
     lust_name = models.CharField(max_length=100, verbose_name="Author surname")
     mid_name = models.CharField(max_length=100, verbose_name="Author middle name", null=True)
     birthday = models.IntegerField(verbose_name="Birthday year", null=True)
-    portrait = models.ImageField(null=True, blank=True)
+    portrait = models.ImageField(upload_to="portraits/", verbose_name="Author portrait", null=True, blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.lust_name}"
@@ -35,8 +35,8 @@ class Authors(models.Model):
 class Book(models.Model):
 
     name = models.CharField(max_length=150, verbose_name="Book name")
-    # category = models.ForeignKey(to=Category, on_delete=models.CASCADE, related_name="books"),
-    author = models.ForeignKey(Authors, on_delete=models.CASCADE, related_name="books")
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Book category")
+    author = models.ManyToManyField(Authors, verbose_name="Book authors")
     description = models.TextField(verbose_name="Book description")
 
     def __str__(self):
@@ -47,17 +47,17 @@ class Book(models.Model):
         verbose_name_plural = "books"
         ordering = ['name']
 
-#
-# class BookParameters(models.Model):
-#
-#     book = models.OneToOneField(Book, on_delete=models.CASCADE)
-#     pages = models.IntegerField(verbose_name="Pages num")
-#     heroes = models.TextField(verbose_name="Main heroes")
-#
-#     def __str__(self):
-#         return f"{self.book}"
-#
-#     class Meta:
-#         verbose_name = "book"
-#         verbose_name_plural = "books"
-#         ordering = ['book']
+
+class BookParameters(models.Model):
+
+    book = models.OneToOneField(Book, on_delete=models.CASCADE)
+    pages = models.IntegerField(verbose_name="Pages num")
+    heroes = models.TextField(verbose_name="Main heroes")
+
+    def __str__(self):
+        return f"{self.book}"
+
+    class Meta:
+        verbose_name = "book"
+        verbose_name_plural = "books"
+        ordering = ['book']
