@@ -1,0 +1,112 @@
+[
+    {
+        "model": "library.authors",
+        "pk": 1,
+        "fields": {
+            "first_name": "Алан",
+            "lust_name": "Тьюринг",
+            "mid_name": "",
+            "birthday": 1912,
+            "portrait": ""
+        }
+    },
+    {
+        "model": "library.authors",
+        "pk": 2,
+        "fields": {
+            "first_name": "Брет",
+            "lust_name": "Рут",
+            "mid_name": "Т. Рут",
+            "birthday": 1945,
+            "portrait": ""
+        }
+    },
+    {
+        "model": "library.authors",
+        "pk": 3,
+        "fields": {
+            "first_name": "Джеймс",
+            "lust_name": "Госел",
+            "mid_name": "Мартин",
+            "birthday": 1958,
+            "portrait": ""
+        }
+    },
+    {
+        "model": "library.authors",
+        "pk": 4,
+        "fields": {
+            "first_name": "Берт",
+            "lust_name": "Бейтс",
+            "mid_name": "",
+            "birthday": 1936,
+            "portrait": ""
+        }
+    },
+    {
+        "model": "library.authors",
+        "pk": 5,
+        "fields": {
+            "first_name": "Энди",
+            "lust_name": "Хант",
+            "mid_name": "",
+            "birthday": 1970,
+            "portrait": ""
+        }
+    },
+    {
+        "model": "library.authors",
+        "pk": 6,
+        "fields": {
+            "first_name": "Кен",
+            "lust_name": "Томпсон",
+            "mid_name": "",
+            "birthday": 1964,
+            "portrait": ""
+        }
+    },
+    {
+        "model": "library.authors",
+        "pk": 7,
+        "fields": {
+            "first_name": "Гвидо",
+            "lust_name": "Ван Россум",
+            "mid_name": "",
+            "birthday": 1956,
+            "portrait": ""
+        }
+    },
+    {
+        "model": "library.authors",
+        "pk": 8,
+        "fields": {
+            "first_name": "Браян",
+            "lust_name": "Керниган",
+            "mid_name": "",
+            "birthday": 1937,
+            "portrait": ""
+        }
+    },
+    {
+        "model": "library.authors",
+        "pk": 9,
+        "fields": {
+            "first_name": "Роберт",
+            "lust_name": "Мартинес",
+            "mid_name": "",
+            "birthday": 1961,
+            "portrait": ""
+        }
+    },
+    {
+        "model": "library.authors",
+        "pk": 10,
+        "fields": {
+            "first_name": "Юрий",
+            "lust_name": "Ким",
+            "mid_name": "",
+            "birthday": 1967,
+            "portrait": ""
+        }
+    }
+]
