@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Category(models.Model):
+class Categories(models.Model):
 
     name = models.CharField(max_length=100, verbose_name="Category name")
     description = models.TextField(verbose_name="Category description", null=True)
@@ -32,32 +32,18 @@ class Authors(models.Model):
         ordering = ['lust_name']
 
 
-class Book(models.Model):
+class Books(models.Model):
 
-    name = models.CharField(max_length=150, verbose_name="Book name")
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name="Book category")
-    author = models.ManyToManyField(Authors, verbose_name="Book authors")
+    title = models.CharField(max_length=150, verbose_name="Book name")
+    category_pk = models.ForeignKey(Categories, on_delete=models.CASCADE, verbose_name="Book category")
+    author_pk = models.ManyToManyField(Authors, verbose_name="Book authors")
+    publication_year = models.IntegerField(verbose_name="Publication year", null=True)
     description = models.TextField(verbose_name="Book description")
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.title}"
 
     class Meta:
         verbose_name = "book"
         verbose_name_plural = "books"
-        ordering = ['name']
-
-
-class BookParameters(models.Model):
-
-    book = models.OneToOneField(Book, on_delete=models.CASCADE)
-    pages = models.IntegerField(verbose_name="Pages num")
-    heroes = models.TextField(verbose_name="Main heroes")
-
-    def __str__(self):
-        return f"{self.book}"
-
-    class Meta:
-        verbose_name = "book"
-        verbose_name_plural = "books"
-        ordering = ['book']
+        ordering = ['title']
