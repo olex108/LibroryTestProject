@@ -1,0 +1,15 @@
+<!-- books_list.html -->
+{% extends 'library/base.html' %}
+
+{% block title %}Список книг{% endblock %}
+
+{% block content %}
+    {% include 'library/header.html' %}
+        <div class="card m-3">
+            <h3 class="mb-4">{{ book.title }}</h3>
+            <p>Автор: {% for author in book.author_pk.all %} {{ author.first_name }} {{ author.lust_name }}, {% endfor %}</p>
+            <p>Категория {{ book.category_pk.name }}</p>
+            <p>Дата публикации: {{ book.publication_year }}</p>
+            <p>ОписаниеЖ: {{ book.description }}</p>
+        </div>
+{% endblock %}

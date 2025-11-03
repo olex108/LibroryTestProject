@@ -1,0 +1,167 @@
+[
+    {
+        "model": "library.books",
+        "pk": 1,
+        "fields": {
+            "title": "Программирование на Python",
+            "author_pk": [7],
+            "category_pk": 1,
+            "publication_year": 2015,
+            "description": "Практическое руководство по программированию на Python."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 2,
+        "fields": {
+            "title": "Алгоритмы: построение и анализ",
+            "author_pk": [3],
+            "category_pk": 2,
+            "publication_year": 2009,
+            "description": "Погружение в основные алгоритмы и структуры данных."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 3,
+        "fields": {
+            "title": "JavaScript для начинающих",
+            "author_pk": [4],
+            "category_pk": 3,
+            "publication_year": 2018,
+            "description": "Обучающее руководство по JavaScript."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 4,
+        "fields": {
+            "title": "Разработка мобильных приложений",
+            "author_pk": [6],
+            "category_pk": 4,
+            "publication_year": 2020,
+            "description": "Пошаговое руководство по созданию мобильных приложений."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 5,
+        "fields": {
+            "title": "Искусственный интеллект и машинное обучение",
+            "author_pk": [8],
+            "category_pk": 5,
+            "publication_year": 2021,
+            "description": "Современные методы и технологии ИИ."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 6,
+        "fields": {
+            "title": "C++. Базовый уровень",
+            "author_pk": [1],
+            "category_pk": 1,
+            "publication_year": 2010,
+            "description": "Введение в язык C++ для начинающих."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 7,
+        "fields": {
+            "title": "Современные веб-технологии",
+            "author_pk": [2],
+            "category_pk": 3,
+            "publication_year": 2019,
+            "description": "Современные инструменты и подходы в веб-разработке."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 8,
+        "fields": {
+            "title": "Машинное обучение с нуля",
+            "author_pk": [5],
+            "category_pk": 5,
+            "publication_year": 2022,
+            "description": "Практическое руководство по машинному обучению."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 9,
+        "fields": {
+            "title": "Разработка под Android",
+            "author_pk": [10],
+            "category_pk": 4,
+            "publication_year": 2017,
+            "description": "Создание приложений для Android."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 10,
+        "fields": {
+            "title": "Объектно-ориентированное программирование",
+            "author_pk": [3],
+            "category_pk": 2,
+            "publication_year": 2012,
+            "description": "Основные принципы и практика ООП."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 11,
+        "fields": {
+            "title": "Многопользовательское программирование",
+            "author_pk": [1, 3],
+            "category_pk": 1,
+            "publication_year": 2014,
+            "description": "Книга о создании многопользовательских приложений."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 12,
+        "fields": {
+            "title": "Современные алгоритмы",
+            "author_pk": [2, 4],
+            "category_pk": 2,
+            "publication_year": 2016,
+            "description": "Обзор современных алгоритмов и методов их реализации."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 13,
+        "fields": {
+            "title": "Инновационные подходы в веб-разработке",
+            "author_pk": [2, 7],
+            "category_pk": 3,
+            "publication_year": 2020,
+            "description": "Современные практики по созданию веб-приложений."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 14,
+        "fields": {
+            "title": "Мобильные технологии и безопасность",
+            "author_pk": [4, 6],
+            "category_pk": 4,
+            "publication_year": 2018,
+            "description": "Разработка мобильных приложений с учетом безопасности."
+        }
+    },
+    {
+        "model": "library.books",
+        "pk": 15,
+        "fields": {
+            "title": "Искусственный интеллект для начинающих",
+            "author_pk": [5, 8],
+            "category_pk": 5,
+            "publication_year": 2022,
+            "description": "Введение в ИИ и нейросети."
+        }
+    }
+]
