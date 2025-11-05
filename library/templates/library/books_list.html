@@ -6,10 +6,12 @@
 {% block content %}
     {% include 'library/header.html' %}
     <h3 class="mb-4">Список книг</h3>
+    <a class="btn btn-primary" href="{% url 'library:book_create'%}">Добавить книгу</a>
     <ul class="list-group">
         {% for book in books %}
             <li class="list-group-item">
-                {{ book.title }} - {{ book.publication_year }}
+                <a href="{% url 'library:book_detail' book.id %}">{{ book.title }} </a>
+                - {{ book.publication_year }} - {{ book.category_pk.name }} - {% for author in book.author_pk.all %} {{ author.first_name }} {{ author.lust_name }}, {% endfor %}
             </li>
         {% endfor %}
     </ul>

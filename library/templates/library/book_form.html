@@ -1,0 +1,18 @@
+<!-- books_list.html -->
+{% extends 'library/base.html' %}
+
+{% block title %}Форма для книги{% endblock %}
+
+
+
+{% block content %}
+    {% include 'library/header.html' %}
+        <div class="card m-3">
+            <h3 class="mb-4">Форма для книги</h3>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </form>
+        </div>
+{% endblock %}
