@@ -3,6 +3,8 @@
 
 {% block title %}Список книг{% endblock %}
 
+
+
 {% block content %}
     {% include 'library/header.html' %}
         <div class="card m-3">
@@ -12,4 +14,8 @@
             <p>Дата публикации: {{ book.publication_year }}</p>
             <p>ОписаниеЖ: {{ book.description }}</p>
         </div>
+        <a class="btn btn-secondary" href="{% url 'library:book_update' book.id %}">Редактировать</a>
+        <a class="btn btn-danger" href="{% url 'library:book_delete' book.id %}">Удалить</a>
+
+
 {% endblock %}

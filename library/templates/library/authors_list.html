@@ -1,0 +1,18 @@
+<!-- books_list.html -->
+{% extends 'library/base.html' %}
+
+{% block title %}Список книг{% endblock %}
+
+{% block content %}
+    {% include 'library/header.html' %}
+    <h3 class="mb-4">Список авторов</h3>
+    <a class="btn btn-primary" href="{% url 'library:author_create'%}">Добавить автора</a>
+    <ul class="list-group">
+        {% for author in authors %}
+            <li class="list-group-item">
+                <a href="{% url 'library:author_detail' author.id %}">{{ author.first_name }} {{ author.lust_name }}</a>
+                - книг на сайте -
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
