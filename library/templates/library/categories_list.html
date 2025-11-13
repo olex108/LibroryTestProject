@@ -1,0 +1,17 @@
+<!-- books_list.html -->
+{% extends 'library/base.html' %}
+
+{% block title %}Категории{% endblock %}
+
+{% block content %}
+    {% include 'library/header.html' %}
+    <h3 class="mb-4">Категории</h3>
+    <a class="btn btn-primary" href="{% url 'library:category_create'%}">Добавить категорию</a>
+    <ul class="list-group">
+        {% for category in categories %}
+            <li class="list-group-item">
+                <a href="#">{{ category.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
