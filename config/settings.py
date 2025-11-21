@@ -1,6 +1,8 @@
 from pathlib import Path
 import os
 import dotenv
+from django.conf.global_settings import AUTH_USER_MODEL, EMAIL_BACKEND, EMAIL_PORT, EMAIL_HOST_PASSWORD, EMAIL_USE_TLS, \
+    EMAIL_USE_SSL
 
 dotenv.load_dotenv()
 
@@ -22,7 +24,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    "library"
+    "library",
+    "users"
 ]
 
 MIDDLEWARE = [
@@ -112,3 +115,15 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+AUTH_USER_MODEL = "users.CustomUser"
+
+# Email settings
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = os.getenv("EMAIL_ADDRESS")
+EMAIL_HOST_PASSWORD = os.getenv("APP_EMAIL_PASSWORD")
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

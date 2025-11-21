@@ -6,6 +6,11 @@
 {% block content %}
     {% include 'library/header.html' %}
     <h3 class="mb-4">Список книг</h3>
+    {% if user.is_authenticated %}
+        <p>{{user.first_name}} мы можем подобрать лучшие предложения для вас</p>
+    {% else %}
+        <p>Мы можем подобрать лучшие предложения для вас после регистрации</p>
+    {% endif %}
     <a class="btn btn-primary" href="{% url 'library:book_create'%}">Добавить книгу</a>
     <ul class="list-group">
         {% for book in books %}

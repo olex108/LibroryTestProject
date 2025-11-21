@@ -13,8 +13,8 @@ class Command(BaseCommand):
         """
 
         # Удаляем существующие записи
-        # Authors.objects.all().delete()
-        # Categories.objects.all().delete()
+        Authors.objects.all().delete()
+        Categories.objects.all().delete()
         Books.objects.all().delete()
 
 
@@ -80,7 +80,7 @@ class Command(BaseCommand):
         #     else:
         #         self.stdout.write(self.style.WARNING(f'Product already exists: {product.name}'))
 
-        # call_command("loaddata", "data_fixtures/authors_programming.json")
-        # call_command("loaddata", "data_fixtures/categories_programming.json")
+        call_command("loaddata", "data_fixtures/authors_programming.json")
+        call_command("loaddata", "data_fixtures/categories_programming.json")
         call_command("loaddata", "data_fixtures/books_programming.json")
         self.stdout.write(self.style.SUCCESS("Successfully loaded data from fixture"))
