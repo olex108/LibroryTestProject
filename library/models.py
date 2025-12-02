@@ -40,6 +40,9 @@ class Books(models.Model):
     publication_year = models.IntegerField(verbose_name="Publication year", null=True)
     description = models.TextField(verbose_name="Book description")
 
+    review = models.TextField(verbose_name="Book review", null=True, blank=True)
+    recommend = models.BooleanField(verbose_name="Recommend", null=True, blank=True)
+
     def __str__(self):
         return f"{self.title}"
 
@@ -47,3 +50,7 @@ class Books(models.Model):
         verbose_name = "book"
         verbose_name_plural = "books"
         ordering = ['title']
+        permissions = (
+            ("can_review_book", "Can review book"),
+            ("can_recommend_book", "Can recommend book"),
+        )

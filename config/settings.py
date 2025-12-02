@@ -1,8 +1,7 @@
 from pathlib import Path
 import os
 import dotenv
-from django.conf.global_settings import AUTH_USER_MODEL, EMAIL_BACKEND, EMAIL_PORT, EMAIL_HOST_PASSWORD, EMAIL_USE_TLS, \
-    EMAIL_USE_SSL
+
 
 dotenv.load_dotenv()
 
@@ -10,9 +9,9 @@ dotenv.load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-SECRET_KEY = "django-insecure-st8n(%=@zwkeexr-)g26&-0$^y40($emc^!7^bkwf5f4sa7#4r"
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-DEBUG = True
+DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = []
 

@@ -5,6 +5,7 @@ from .models import (
                      Books,
                      )
 
+
 @admin.register(Authors)
 class AuthorsAdmin(admin.ModelAdmin):
     list_display = ("first_name", "lust_name", "birthday")
@@ -16,6 +17,7 @@ class AuthorsAdmin(admin.ModelAdmin):
 class CategoriesAdmin(admin.ModelAdmin):
     list_display = ("name",)
     search_fields = ("name",)
+
 
 @admin.register(Books)
 class BooksAdmin(admin.ModelAdmin):
