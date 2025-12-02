@@ -1,0 +1,60 @@
+<!-- books_list.html -->
+{% extends 'library/base.html' %}
+
+{% block title %}Список книг{% endblock %}
+
+
+
+{% block content %}
+    {% include 'library/header.html' %}
+        <div class="card m-3">
+            <h3 class="mb-4">{{ book.title }}</h3>
+            <p>Автор: {% for author in book.author_pk.all %} {{ author.first_name }} {{ author.lust_name }}, {% endfor %}</p>
+            <p>Категория {{ book.category_pk.name }}</p>
+            <p>Дата публикации: {{ book.publication_year }}</p>
+            <p>ОписаниеЖ: {{ book.description }}</p>
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-2 me-2">
+                <div class="row">
+                    <a class="btn btn-secondary" href="{% url 'library:book_update' book.id %}">Редактировать</a>
+                </div>
+            </div>
+            <div class="col-2 me-2">
+                <div class="row">
+                    <a class="btn btn-danger" href="{% url 'library:book_delete' book.id %}">Удалить</a>
+                </div>
+            </div>
+            <div class="col-2 me-2">
+                <div class="row">
+                    {% if 'library.can_recommend_book' in perms %}
+                        <form action="{% url 'library:book_recommend' book.id %}" method="post">
+                        {% csrf_token %}
+                        <button class="btn btn-secondary" type="submit">Рекомендовать</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+
+
+
+        {% if 'library.can_review_book' in perms %}
+            <div class="card m-3 p-4">
+                <h3 class="mb-4">Рецензия на книгу</h3>
+                <form action="{% url 'library:book_review' book.id %}" method="post">
+                    {% csrf_token %}
+
+                    <textarea class="form-control" name="review" rows="5"></textarea>
+                    <button class="btn btn-secondary mt-3" type="submit">Рецензировать</button>
+                </form>
+            </div>
+
+
+
+        {% endif %}
+
+
+{% endblock %}

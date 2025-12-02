@@ -1,5 +1,8 @@
 <!-- header.html -->
 <header>
     <h1>Веб библиотека</h1>
+    {% if user.is_authenticated %}
+        <p>Добро пожаловать, {{user.username}}!</p>
+    {% endif %}
     <p>Список и рейтинг книг по программированию</p>
 </header>
